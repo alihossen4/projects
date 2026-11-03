@@ -1,30 +1,30 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:google_maps_app/main.dart';
+import 'package:google_maps_app/presentation/screens/home_screen.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('home screen shows a searchable Maps-style top bar', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const MaterialApp(home: HomeScreen()));
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('Search Google Maps'), findsOneWidget);
+    expect(find.text('Explore'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    await tester.enterText(find.byType(TextField), 'coffee');
     await tester.pump();
+    expect(find.text('coffee'), findsOneWidget);
+    await tester.tap(find.byTooltip('Clear search'));
+    await tester.pump();
+    expect(find.text('coffee'), findsNothing);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await tester.tap(find.widgetWithText(ChoiceChip, 'Restaurants'));
+    await tester.pump();
+    expect(
+      tester
+          .widget<ChoiceChip>(find.widgetWithText(ChoiceChip, 'Restaurants'))
+          .selected,
+      isTrue,
+    );
   });
 }
