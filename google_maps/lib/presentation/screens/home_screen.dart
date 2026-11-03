@@ -90,19 +90,19 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(left: 12, right: 16),
-            child: CircleAvatar(
-              radius: 17,
-              backgroundColor: const Color(0xFF1A73E8),
-              child: const Text(
-                'A',
-                style: TextStyle(color: Colors.white, fontSize: 15),
-              ),
-            ),
-          ),
-        ],
+        // actions: [
+        //   Padding(
+        //     padding: const EdgeInsets.only(left: 12, right: 16),
+        //     child: CircleAvatar(
+        //       radius: 17,
+        //       backgroundColor: const Color(0xFF1A73E8),
+        //       child: const Text(
+        //         'A',
+        //         style: TextStyle(color: Colors.white, fontSize: 15),
+        //       ),
+        //     ),
+        //   ),
+        // ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
