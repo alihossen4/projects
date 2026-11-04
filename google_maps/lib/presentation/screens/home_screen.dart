@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_app/presentation/ui/components/places.dart';
+import 'package:google_maps_app/presentation/ui/widget/map_widget.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -146,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const Expanded(child: ColoredBox(color: Color(0xFFF2F5F7))),
-          GoogleMap(initialCameraPosition: Places.openingCamera),
+          MapWidget(),
         ],
       ),
     );
