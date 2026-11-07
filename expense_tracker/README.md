@@ -1,17 +1,32 @@
-# expense_tracker
+# Expense Tracker
 
-A new Flutter project.
+A Flutter personal finance app for recording income and expenses. The dashboard
+shows total income, total expenses, and the current balance, with recent
+transactions available at a glance. Transactions can be created, reviewed,
+edited, and deleted.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Local SQLite storage in `expense_tracker.db`, using the `transactions` table.
+- SQLite initialization for Android/iOS/macOS, Linux/Windows, and web.
+- Browser storage is persisted in IndexedDB and is scoped to the app's origin.
+- Transaction form with title, positive amount, category, type, and date.
+- Transaction details screen with edit and confirmed delete actions.
+- Live dashboard totals and a complete transaction list.
+- Income and expense amounts are visually distinguished.
 
-A few resources to get you started if this is your first Flutter project:
+## Run
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+Install Flutter dependencies and launch on an Android or iOS device or emulator:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```sh
+flutter pub get
+flutter run
+```
+
+The database is managed by Sqflite and persists between app launches. Run the
+automated widget tests with:
+
+```sh
+flutter test
+```
