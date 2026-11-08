@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_app/presentation/ui/components/places.dart';
 import 'package:google_maps_app/presentation/ui/widget/map_widget.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

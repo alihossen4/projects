@@ -13,7 +13,7 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height * 0.6,
         child: Column(
           children: [
